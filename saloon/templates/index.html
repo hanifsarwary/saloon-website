@@ -1,0 +1,187 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+{% extends 'base.html'%}
+{% load staticfiles %}
+{% block content %}
+
+<head>
+<style>
+#mainDiv
+{
+	float: center
+	margin-left: auto;
+	margin-right: 0%;
+	width: 900px;
+	height: 250px;
+}
+</style>
+</head>
+
+	<div class="header">
+		<div class="logo">
+			<!--<a href="index.html"><img src="{% static 'images/logo.jpg' %}" width="200" height="100" alt=""/></a>-->
+		</div>
+
+	    <div class="slider_container sTop" id="mainDiv">
+
+  			<div class="wmuSlider example1">
+
+					<div class="wmuSliderWrapper">
+
+							   <article style="position: relative; width: 100%; opacity: 0; align-self: center;"> 
+							   	 <div class="banner-wrap">
+							   		 <div class="slider-left">
+										<p class="top_desc"><img src="{% static 'images/slider1.png'%}"></p>
+									</div>
+								 </div>
+								</article>
+							   <article style="position: relative; width: 100%; opacity: 1; align-self: center;"> 
+							   	 <div class="banner-wrap">
+							   		 <div class="slider-left">
+										<p class="top_desc"><img src="{% static 'images/slider2.png'%}"></p>
+									 </div>
+								 </div>
+							   </article>
+							   <article style="position: relative; width: 100%; opacity: 0; align-self: center;">
+							   	 <div class="banner-wrap">
+							   		 <div class="slider-left">
+										<p class="top_desc"><img src="{% static 'images/slider3.png'%}"></p>
+									 </div>
+								 </div>
+							   </article>
+							   <article style="position: relative; width: 100%; opacity: 0; align-self: center;">
+							   	 <div class="banner-wrap">
+							   		 <div class="slider-left">
+										<p class="top_desc"><img src="{% static 'images/slider4.png'%}"></p>
+									 </div>
+								 </div>
+								</article>
+							   <article style="position: relative; width: 100%; opacity: 0; align-self: center;">
+							   	 <div class="banner-wrap">
+							   		 <div class="slider-left">
+										<p class="top_desc"><img src="{% static 'images/slider5.png'%}"></p>
+									 </div>
+								 </div>
+								</article>
+
+					</div>
+<!--
+                <ul class="wmuSliderPagination">
+                	<li><a href="#" class="">0</a></li>
+                	<li><a href="#" class="">1</a></li>
+                	<li><a href="#" class="">2</a></li>
+                </ul>
+-->
+        	</div>
+   	    </div>
+
+
+
+    <div class="slider_container sTop" id="mainDiv">
+
+  			<div class="wmuSlider example1">
+
+					<div class="wmuSliderWrapper">
+							    <article style="position: relative; width: 100%; opacity: 0; align-self: center;">
+							   	 <div class="banner-wrap">
+							   		 <div class="slider-left">
+										<p class="top_desc"><img src="{% static 'images/slider5.png'%}"></p>
+									 </div>
+								 </div>
+								</article>
+							    <article style="position: relative; width: 100%; opacity: 0; align-self: center;">
+							   	 <div class="banner-wrap">
+							   		 <div class="slider-left">
+										<p class="top_desc"><img src="{% static 'images/slider3.png'%}"></p>
+									 </div>
+								 </div>
+							    </article>
+							    <article style="position: relative; width: 100%; opacity: 0; align-self: center;"> 
+							   	 <div class="banner-wrap">
+							   		 <div class="slider-left">
+										<p class="top_desc"><img src="{% static 'images/slider1.png'%}"></p>
+									</div>
+								 </div>
+								</article>
+							    <article style="position: relative; width: 100%; opacity: 1; align-self: center;"> 
+							   	 <div class="banner-wrap">
+							   		 <div class="slider-left">
+										<p class="top_desc"><img src="{% static 'images/slider2.png'%}"></p>
+									 </div>
+								 </div>
+							    </article>
+							    <article style="position: relative; width: 100%; opacity: 0; align-self: center;">
+							   	 <div class="banner-wrap">
+							   		 <div class="slider-left">
+										<p class="top_desc"><img src="{% static 'images/slider4.png'%}"></p>
+									 </div>
+								 </div>
+								</article>
+					</div>
+
+            <!--
+                <ul class="wmuSliderPagination">
+                	<li><a href="#" class="">0</a></li>
+                	<li><a href="#" class="">1</a></li>
+                	<li><a href="#" class="">2</a></li>
+                </ul>
+            -->
+        	</div>
+   	    </div>
+
+	</div>  
+
+      <div class="portfolio s1" id="portfolio">
+		  {% for ty in types%}
+	  <div class="portfolio_box">
+		<div class="col_1_of_4 span_1_of_4">
+	 	   <a href="{% url 'bookingsview' ty.id %}" class="b-link-stripe b-animate-go  thickbox">
+			<img src="{{ty.image.url}}" width="400" height="600" class="img-responsive" alt=""/>
+			    <div class="b-wrapper">
+				   <h2 class="b-animate b-from-left    b-delay03 ">
+					 <!--<img src="{% static 'images/p_logo.png' %}" class="img-responsive" alt=""/>-->
+					 <span></span>
+					 <button>
+					 {{ty.type_title}}<br>Book Now</button>
+					 <label> <i class="heart"> </i>{{ty.price}}€
+
+					 </label>
+					</h2>
+				</div>
+			</a>
+		</div>
+		  {% endfor %}
+
+
+		  <div class="clearfix"> </div>
+	</div>
+
+   </div>
+
+
+   	<div class="footer">
+   		<div class="container">
+   			<div class="copy">
+		       <p>&copy; 2014 Template by <a href="http://w3layouts.com" target="_blank"> w3layouts</a></p>
+		    </div>
+		    <div class="social">	
+		      <ul>	
+			   <li class="facebook"><a href="#"><span> </span></a></li>
+			   <li class="twitter"><a href="#"><span> </span></a></li>
+			   <li class="rss"><a href="#"><span> </span></a></li>	
+			   <li class="google"><a href="#"><span> </span></a></li>			
+		     </ul>
+			</div>
+			<div class="clearfix"></div>
+   		</div>
+   	</div>
+
+
+{% endblock %}
+
+

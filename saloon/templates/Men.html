@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="portfolio s1" id="portfolio">
+		  {% for ty in types%}
+	  <div class="portfolio_box">
+		<div class="col_1_of_4 span_1_of_4">
+	 	   <a href="{% url 'bookingsview' ty.id %}" class="b-link-stripe b-animate-go  thickbox">
+			<img src="{{ty.image.url}}" width="400" height="600" class="img-responsive" alt=""/>
+			    <div class="b-wrapper">
+				   <h2 class="b-animate b-from-left    b-delay03 ">
+
+					 <span></span>
+					 <button>
+					 {{ty.type_title}}<br>Book Now</button>
+					 <label> <i class="heart"> </i>{{ty.price}}€
+
+					 </label>
+					</h2>
+				</div>
+			</a>
+		</div>
+		  {% endfor %}
+
+
+		  <div class="clearfix"> </div>
+	</div>
+
+   </div>
+{% endblock %}

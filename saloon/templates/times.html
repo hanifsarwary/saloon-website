@@ -1,0 +1,12 @@
+
+{% if times_string %}
+{% for t,k in times_string%}
+
+<a href="{% url 'BookingDetailView' id day month year k.id %}">{{t}}</a>
+
+{% endfor %}
+
+{% else %}
+<h1>No Times available for this date please go back and choose another date</h1>
+
+{% endif %}
